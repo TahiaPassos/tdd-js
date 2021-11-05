@@ -1,4 +1,7 @@
-let isPalindrome = (phrase) => phrase === phrase.split('').reverse().join('');
+let isPalindrome = phrase => {
+  if(phrase.trim() === '') return false;
+  return phrase === phrase.split('').reverse().join('')
+};
 
 describe('canary test for palindrome task', () => {
   it('shows the infrastructure works', () => {
