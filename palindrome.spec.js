@@ -1,4 +1,5 @@
 let isPalindrome = phrase  => {
+  if(typeof phrase !== 'string') throw new Error('it must be a String');
   if(phrase === '') throw new Error('empty strings are not palindrome');
   if(phrase.trim() === '') return false;
   return phrase === phrase.split('').reverse().join('')
@@ -32,4 +33,8 @@ it('error for empty string', () => {
   }).toThrowError('empty strings are not palindrome');
 });
 
-it.todo ('error for not a string');
+it('error for not a string', () => {
+  expect(() => {
+    isPalindrome(121);
+  }).toThrowError('it must be a String');
+});
