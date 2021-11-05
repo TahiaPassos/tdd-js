@@ -1,5 +1,5 @@
-function fahrenheitToCelsiu(){
-  
+const fahrenheitToCelsiu = () => {
+  return 0;
 }
 
 describe('canary test for fahrenheit to celsiu', () => {
@@ -10,7 +10,7 @@ describe('canary test for fahrenheit to celsiu', () => {
 
 describe('the function to convert fahrenheit to celsiu should', () => {
   it('return 0 for 32', () => {
-    expect(fahrenheitToCelsiu(32).toBe(0));
+    expect(fahrenheitToCelsiu(32)).toBe(0);
   });
   it.todo('return 10 for 50');
   it.todo('return 100 for 212');
