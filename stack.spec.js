@@ -1,13 +1,18 @@
 const stackFactory = () => {
   let empty = true;
+  let count = 0;
+
   return {
   isEmpty: () => empty,
-  size: () => 0,
-  push: () => { empty = false;}
+  size: () => count,
+  push: () => { 
+    empty = false;
+    count += 1;
+    }
   }
 }
 
-let stack = stackFactory();
+let stack;
 
 describe('canary test for stack task', () => {
     it('show the infrastructure works', () => {
@@ -16,6 +21,9 @@ describe('canary test for stack task', () => {
 });
 
 describe('a stack', () => {
+  beforeEach(() => {
+    stack = stackFactory();
+  })
   it('starts empty', () => {
     expect(stack.isEmpty()).toBe(true);
   });
@@ -28,7 +36,10 @@ describe('a stack', () => {
     expect(stack.isEmpty()).toBe(false);
   });
 
-  it.todo('stack size is 1 when pushed');
+  it('stack size is 1 when pushed', () => {
+    stack.push();
+    expect(stack.size()).toBe(1);
+  });
 
   it.todo('stack is empty when pushed and popped');
 
