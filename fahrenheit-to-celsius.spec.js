@@ -3,3 +3,11 @@ describe('canary test for fahrenheit to celsiu', () => {
     expect(true).toBe(true);
   })
 })
+
+describe('the function to convert fahrenheit to celsiu should', () => {
+  it.todo('return 0 for 32');
+  it.todo('return 10 for 50');
+  it.todo('return 100 for 212');
+  it.todo('return -40 for -40');
+  it.todo('return -273.15 for -459.67');
+})
