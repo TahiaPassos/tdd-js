@@ -3,13 +3,10 @@ const stackFactory = () => {
   let count = 0;
 
   return {
-  isEmpty: () => empty,
+  isEmpty: () => count === 0,
   size: () => count,
-  push: () => { 
-    empty = false;
-    count += 1;
-    },
-    pop: () => { empty = true;}
+  push: () => { count += 1; },
+  pop: () => { count -= 1; }
   }
 }
 
@@ -48,7 +45,11 @@ describe('a stack', () => {
     expect(stack.isEmpty()).toBe(true);
   });
 
-  it.todo('stack size is 0 when pushed and popped');
+  it('stack size is 0 when pushed and popped', () => {
+    stack.push();
+    stack.pop();
+    expect(stack.size()).toBe(0);
+  });
 
   it.todo('throws overflow error when pushing to a stack at full capacity');
 
